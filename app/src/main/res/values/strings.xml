@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Binus EzyFoody</string>
+    <string name="my_order">My Order</string>
+    <string name="drinks">Drinks</string>
+    <string name="foods">Foods</string>
+    <string name="snacks">Snacks</string>
+    <string name="top_ups">TopUp</string>
+    <string name="order_more">Order More</string>
+    <string name="delete">Delete</string>
+    <string name="pay_order">Pay Now</string>
+    <string name="order_complete">Your Order Complete\n Thank You</string>
+    <string name="back_to_main_menu">Main Menu</string>
+
+</resources>
