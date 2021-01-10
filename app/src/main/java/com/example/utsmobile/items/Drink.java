@@ -48,6 +48,10 @@ public class Drink extends Item {
     public void writeToParcel(Parcel parcel, int i) {
     parcel.writeString(this.getName());
     parcel.writeInt(this.getPrice());
+    parcel.writeInt(this.getStock());
+    }
+
+    public Drink() {
     }
 
     public static final Creator<Drink> CREATOR = new Creator<Drink>() {

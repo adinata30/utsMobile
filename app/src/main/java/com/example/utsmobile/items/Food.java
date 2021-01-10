@@ -10,7 +10,10 @@ public class Food extends Item {
 
     private static ArrayList<Item> foods;
 
-    public Food(String name,int price){
+    public Food() {
+    }
+
+    public Food(String name, int price){
         super(name,price);
 
     }
@@ -46,6 +49,7 @@ public class Food extends Item {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.getName());
         parcel.writeInt(this.getPrice());
+        parcel.writeInt(this.getStock());
     }
 
     public Food(Parcel in) {

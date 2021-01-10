@@ -7,19 +7,57 @@
     tools:context=".ItemDisplayActivity"
     android:background="@mipmap/bg_foreground">
 
-    <Button
-        android:id="@id/my_order_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
+    <LinearLayout
         android:layout_margin="10dp"
-        android:text="@string/my_order"
-        android:textAllCaps="false"
-        android:onClick="gotoMyOrderPage"
-        />
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bal : "
+            />
+        <TextView
+            android:padding="5dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/balance_text"
+            android:text="0"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimary"
+            />
+        <Button
+            android:id="@+id/my_transaction_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="History"
+            android:textAllCaps="false"
+            android:onClick="goToHistoryPage"
+            />
+        <Button
+            android:id="@+id/my_order_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_order"
+            android:textAllCaps="false"
+            android:onClick="gotoMyOrderPage"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/restaurant_name"
+        android:textColor="@color/colorSecondary"
+        android:textSize="30sp"
+        android:text="Restaurant"
+        android:gravity="center"
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <androidx.recyclerview.widget.RecyclerView
-
+        android:layout_marginTop="70dp"
         android:id="@+id/item_to_display_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -19,10 +19,10 @@ import com.example.utsmobile.items.Item;
 import java.util.ArrayList;
 
 public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.ViewHolder> {
-    private ArrayList<Order> orders;
+    private ArrayList<OrderBase> orders;
     private boolean isFinished = false;
 
-    public MyOrderAdapter(ArrayList<Order> orders) {
+    public MyOrderAdapter(ArrayList<OrderBase> orders) {
         isFinished = false;
         this.orders = orders;
     }

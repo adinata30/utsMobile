@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +22,8 @@ public class DoOrderActivity extends AppCompatActivity {
     Item currentItem;
     Order currentOrder =  null;
     boolean newOrder = false;
+    private Button orderBtn;
+    private String rid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +31,16 @@ public class DoOrderActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         currentItem = intent.getParcelableExtra("Item");
+        rid = FindRestaurant.rid;
         String name = currentItem.getName();
         Integer price = currentItem.getPrice();
+        orderBtn = findViewById(R.id.order_more_btn);
 
+        if(currentItem.getStock() <=0)
+        {
+            orderBtn.setEnabled(false);
+            orderBtn.setText("Out of Stock, cannot order");
+        }
 //        Toast.makeText(this,""+Order.getInstance().getOrders().size(),Toast.LENGTH_SHORT).show();
         currentOrder = Order.getOrder(currentItem);
         qtyEdit = findViewById(R.id.current_qty);
@@ -66,6 +77,11 @@ public class DoOrderActivity extends AppCompatActivity {
         finish();
     }
     public void gotoMyOrderPage(View view){
+        if(currentItem.getStock() <=0)
+        {
+            changePage("My Order");
+            return;
+        }
         int idx = 0;
         if (newOrder)
         {

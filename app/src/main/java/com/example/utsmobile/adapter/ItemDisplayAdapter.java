@@ -1,6 +1,7 @@
 package com.example.utsmobile.adapter;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.utsmobile.DoOrderActivity;
 import com.example.utsmobile.ItemDisplayActivity;
 import com.example.utsmobile.R;
+import com.example.utsmobile.items.Food;
 import com.example.utsmobile.items.Item;
 
 import java.util.ArrayList;
@@ -46,6 +48,7 @@ public class ItemDisplayAdapter extends RecyclerView.Adapter<ItemDisplayAdapter.
 
                 Intent intent = new Intent(view.getContext(),DoOrderActivity.class);
                 Item item = items.get(position);
+
                 intent.putExtra("Item",item);
                 view.getContext().startActivity(intent);
             }

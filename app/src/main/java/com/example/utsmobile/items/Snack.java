@@ -21,6 +21,9 @@ public class Snack extends Item {
         return snacks;
     }
 
+    public Snack() {
+    }
+
     private static void initializeSnack(){
         snacks.add(new Snack("Snickers",15000));
         snacks.add(new Snack("Chitato",5000));
@@ -44,6 +47,7 @@ public class Snack extends Item {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.getName());
         parcel.writeInt(this.getPrice());
+        parcel.writeInt(this.getStock());
     }
 
     public Snack(Parcel in) {
